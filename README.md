@@ -2,17 +2,8 @@
 
 
 <h1>本项目基于爬虫识别网站的中间件</h1>
-需要安装的库有：
-pymysql
-，re
-，requests
-，ddddocr
-，os
-,sys
-,hashlib
-，requests
-，argparse
-，threading
+安装所有需求库请执行：pip install -r requirements.txt
+
 <br>!并且需要连接本地mysql的库，然后创建名为spiders的库，账号为root，密码为root，再将两个sql文件导入spiders库中）</br>
 <br>（内容可以根据自己的想法调整）</br>
 <br>能提供的帮助有：</br>
