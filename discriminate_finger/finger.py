@@ -4,17 +4,21 @@ import threading
 import time
 import requests
 import check_leak
+import os,sys,hashlib
 
 def banner():
+    print("============================================")
     print("  _      _   _      _                _    ")
     print(" | |    | | | |    | |_    __ _ ____| | __")
     print(" | |____| | | |_   | '_ \ / _` | '--| |/ /")
     print(" | |____| | |___ \ | | | | (_| | |  |   < ")
     print(" | |    | |,|___) || | |_|\\___,|_|  |_|\_\\")
     print(" |_|    |_|_|____/                        \n")
+    print("============================================")
     print("Welcome")
-
-
+    print("")
+    print("")
+    print("")
 
 header={
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
@@ -26,8 +30,9 @@ def get_sever_name(url):
     if r.status_code == 200:
         # r.headers是个字典，取字典中sever对应的值
         r_infor = r.headers['Server']
-        print("url是"+url+"它的中间件是"+r_infor)
+        print("**************"+url+"它的中间件是"+r_infor+"**************")
         check_leak.sql_search(str(r_infor))
+        check_leak.get_hash(url)
         with open("url_server_name.txt",'a') as file_1:
             file_1.write(url+" : "+r_infor+'\n')
     else:
@@ -71,8 +76,6 @@ def read_file(file_name):
 # url = input()
 
 
-
-
 if __name__ == "__main__":
     # 使用终端跑的时候
     banner()
@@ -85,9 +88,13 @@ if __name__ == "__main__":
     check_url = re.search("^http",str(args.url), re.S)
     check_file = re.search("txt$",str(args.file), re.S)
     if check_url != None:
+        print("========================================================================================")
         sname=get_sever_name(args.url)
+        print("========================================================================================")
+        # check_leak.sql_search(sname)
+        # check_leak.get_hash(args.url)
         # 调用check_leak.py的sql_search函数
-        check_leak.sql_search(sname)
+
     elif check_file != None:
         urls = read_file(file_name)
         thread(urls)
