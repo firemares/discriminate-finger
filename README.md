@@ -9,9 +9,9 @@
 
 
 <br>使用方式：</br>
-<br>针对一条</br>
+<br>针对一条url</br>
 <br>python finger.py -u url</br>
-<br>针对多条，只支持txt文件</br>
+<br>针对多条url，只支持txt文件</br>
 <br>python finger.py -f x.txt</br>
 
 
