@@ -13,6 +13,7 @@ pymysql
 ，requests
 ，argparse
 ，threading
+<br>并且需要连接本地mysql的库，然后创建名为spiders的库，账号为root，密码为root，再将两个sql文件导入spiders库中（内容可以根据自己的想法调整）</br>
 
 <br>能提供的帮助有：</br>
 <br>1.获取网页的中间件信息</br>
