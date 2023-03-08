@@ -1,6 +1,17 @@
 # discriminate-finger
 
+
 本项目基于爬虫识别网站的中间件
+需要安装的库有：
+pymysql
+re
+requests
+ddddocr
+os,sys,hashlib
+requests
+argparse
+threading
+
 <br>能提供的帮助有：</br>
 <br>1.获取网页的中间件信息</br>
 <br>2.给出网页中间件可能存在的漏洞</br>
